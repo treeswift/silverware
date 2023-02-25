@@ -21,3 +21,7 @@ We are committed to releasing our code into the public domain + under [effective
 ## Why the name?
 
 Because forks. (Yes, `fork()`s.)
+
+## Is there a code of conduct?
+
+Be kind. (Or, well, fork and then whatever.)
