@@ -6,11 +6,28 @@ Due to the nature of application containers, expect desktop (traditional) app mo
 
 ## Is it ready to use?
 
-It's a work in progress. Stay tuned.
+We follow the planning system outlined in _The Pipe and the Pitcher_: "One berry I pick, at another I look, a third one I notice, a fourth one I fancy."
+
+method|POSIX header|Windows header|provided by/planning tier|notes
+--|--|--|--
+`exit`|`unistd.h`|`stdlib.h`|[UCRT](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/exit-exit-exit)|a universal human right
+`exec*`|`unistd.h`|`process.h`[UCRT](https://learn.microsoft.com/en-us/cpp/c-runtime-library/exec-wexec-functions)|
+`fexecve`|`unistd.h`|-|tier 4 "I fancy"|execute a program specified via its file descriptor
+`fork`|`unistd.h`|tier 1 "I pick"|idiomatically collaborative with `exec` (*)
+`getpgid` `getpgrp`|`unistd.h`|-|set/get process group
+getpid getppid	get process identification
+getsid	get session ID
+nice	change process priority
+setpgid
+setpgrp
+setsid	creates a session and sets the process group ID
+sleep	sleep for a specified number of seconds
+tcgetpgrp
+tcsetpgrp
 
 ## But there is Cygwin/MSys/MinGW/you name it…
 
-POSIX process API (or [user API](https://github.com/treeswift/libwusers), for that matter) implementation in MinGW is incomplete.
+We _do_ target MinGW, but its POSIX process API (or [user API](https://github.com/treeswift/libwusers), for that matter) implementation is incomplete.
 
 As for Cygwin et al, see the next chapter.
 
